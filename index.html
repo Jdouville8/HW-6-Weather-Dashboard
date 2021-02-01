@@ -15,88 +15,119 @@
   </head>
   <body>
     <header class="jumbotron">
-      <h1 class="display-3 text-center">Weather Dashboard</h1>
+      <h1 class="display-4 text-center">Weather Dashboard</h1>
     </header>
 
-<div class="row">
-    <!-- Search Bar -->
-    <form>
-      <div class="form-group m-4">
-        <label for="Search">Search</label>
-        <input
-          type="search"
-          id="search-input"
-          aria-describedby="searchBar"
-          placeholder="Search City"
-        />
-        <small id="sub-text-weather" class="form-text text-muted"
-          >Let's see what the weather's like</small>
-      </div>
-      <button type="submit" class="btn btn-primary m-4">Search</button>
-    </form>
-
-    <div class="container m-0" id="weather-Display">
-        <!-- Append City, temperature, humidity, windspeed. UV index -->
-        <p class="city"></p>
-    
-        
-        <div class="row">
-            <!-- <div class="col-3"></div> -->
-            <div class="col-md-2">
-                <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Header</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Primary card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Header</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Primary card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Header</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Primary card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Header</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Primary card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Header</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Primary card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
+    <div class="row">
+      <!-- Search Bar -->
+      <form>
+        <div class="form-group m-4">
+          <label for="Search">Search</label>
+          <input
+            type="text"
+            id="search-input"
+            aria-describedby="searchBar"
+            placeholder="Search City"
+          />
+          <small id="sub-text-weather" class="form-text text-muted"
+            >Let's see what the weather's like</small
+          >
         </div>
+        <button id="saveBtn" type="submit" class="btn btn-primary m-4">
+          Search
+        </button>
+      </form>
 
-    </div>
+      <div class="container m-0" id="weather-Display">
+        <!-- Append City, temperature, humidity, windspeed. UV index -->
+        <div class="city"></div>
+        <div class="temp"></div>
+        <div class="humidity"></div>
+        <div class="wind"></div>
 
+        <div class="row">
+          <!-- <div class="col-3"></div> -->
+          <div class="col-md-2">
+            <div
+              class="card text-white bg-primary mb-3"
+              style="max-width: 18rem"
+            >
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h5 class="card-title">Primary card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div
+              class="card text-white bg-primary mb-3"
+              style="max-width: 18rem"
+            >
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h5 class="card-title">Primary card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div
+              class="card text-white bg-primary mb-3"
+              style="max-width: 18rem"
+            >
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h5 class="card-title">Primary card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div
+              class="card text-white bg-primary mb-3"
+              style="max-width: 18rem"
+            >
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h5 class="card-title">Primary card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div
+              class="card text-white bg-primary mb-3"
+              style="max-width: 18rem"
+            >
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h5 class="card-title">Primary card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
     <script src="./Assets/JS/script.js"></script>
-
-
   </body>
 </html>
