@@ -44,6 +44,11 @@
         <button id="saveBtn" type="submit" class="btn btn-primary m-4">
           Search
         </button>
+        <!-- Search History -->
+        <div id="search-history">
+
+        </div>
+
       </form>
 
       <div class="container m-0" id="weather-Display">
@@ -52,12 +57,47 @@
         <div class="temp weatherStat"></div>
         <div class="humidity weatherStat"></div>
         <div class="wind weatherStat"></div>
+        <div class="uvi weatherStat"></div>
 
-        <div class="row">
+        <div id="forecastDiv" class="row">
           <!-- <div class="col-3"></div> -->
+          <!-- Cards -->
           <div class="col-md-2">
             <div
               class="card text-white bg-primary mb-3"
+              id="card-main"
+              style="max-width: 18rem"
+            >
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h5 class="card-title">Primary card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-md-2">
+            <div
+              class="card text-white bg-primary mb-3"
+              id="card-second"
+              style="max-width: 18rem"
+            >
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h5 class="card-title">Primary card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div> -->
+            <!-- </div>
+          </div>
+          <div class="col-md-2">
+            <div
+              class="card text-white bg-primary mb-3"
+              id="card-third"
               style="max-width: 18rem"
             >
               <div class="card-header">Header</div>
@@ -73,6 +113,7 @@
           <div class="col-md-2">
             <div
               class="card text-white bg-primary mb-3"
+              id="card-fourth"
               style="max-width: 18rem"
             >
               <div class="card-header">Header</div>
@@ -88,6 +129,7 @@
           <div class="col-md-2">
             <div
               class="card text-white bg-primary mb-3"
+              id="card-fifth"
               style="max-width: 18rem"
             >
               <div class="card-header">Header</div>
@@ -99,37 +141,7 @@
                 </p>
               </div>
             </div>
-          </div>
-          <div class="col-md-2">
-            <div
-              class="card text-white bg-primary mb-3"
-              style="max-width: 18rem"
-            >
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div
-              class="card text-white bg-primary mb-3"
-              style="max-width: 18rem"
-            >
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-            </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

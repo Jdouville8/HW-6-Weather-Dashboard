@@ -1,11 +1,28 @@
 $(document).ready(function () {
   var location = 0;
+  var locationStore = []
+  // If key exists set variable to current, if not setItem and set variable = 0
 
-//   var storedCity = function () {
-//     if (localStorage.count) {
-//         location = localStorage.count.location;
-//     }
-//   }
+  var storedCity = function () {
+    if (localStorage.count != null) {
+        location = (localStorage.count)
+        console.log(location);
+
+        for (i = 0; i < location; i++){
+          var pastEntry = localStorage.getItem('place' + (i + 1))
+          var btnDiv = $('<div>');
+          var historyEntry = $('<button>');
+          $(historyEntry).text(pastEntry)
+          $(historyEntry).attr('class', 'histBtn m-4')
+          $(btnDiv).append(historyEntry)
+          $('#search-history').append(btnDiv);
+          console.log(pastEntry)
+        }
+    } else {
+      location = 0;
+      console.log(location);
+    }
+  }
 
 
   var weatherSearch = function (city) {
@@ -35,14 +52,54 @@ $(document).ready(function () {
       );
       $(".humidity").text("Current humidity: " + response.main.humidity);
       $(".temp").text("Current temperature in Fahrenheit is: " + tempFar);
+      
+      var lon = response.coord.lon
+      var lat = response.coord.lat
+      var queryURL2 =
+        "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude={part}&appid=" + apiKey;
+
+      $.ajax({
+        url: queryURL2,
+        method: "GET",
+      }).then(function (uvForecast) {
+        $('.uvi').text('UV index: ' + uvForecast.current.uvi)
+        console.log(uvForecast.current.uvi);
+
+        for (i = 0; i < 5; i++)
+        console.log(uvForecast);
+        var date = uvForecast.daily[i].dt
+        var tempHighKel = uvForecast.daily[i].temp.max
+        var tempHighFar = ((tempHighKel - 273.15) * 1.8 + 32).toFixed(2);
+        var card =
+        '<div class="col-md-2"><p class="5-dayDate">' + date + 
+        '</p>'
+
+    //     "<div class='col-sm-2 cardDay'><p class='dateForecast'>" +
+    //     forecastDate +
+    //     "</p><p>" +
+    //     '<img src="' + iconurl + '" />' +
+    //     "</p><p>" +
+    //     "Temp: " +
+    //     forecastTemp +
+    //     '℉' +
+    //     "</p><p>" +
+    //     'Humidity: ' +
+    //     forecastHumidity +
+    //     '%' +
+    //     "</p></div>";
+    // $(".forecastCards").append(cardContent);
+
+
+        $('#forecastDiv').append(card);
+      })
     });
   };
 
-//   storedCity();
+  storedCity();
   
-  weatherSearch("london");
+  weatherSearch("London");
 
-  $("#saveBtn").on("click", function () {
+  $("#saveBtn").on("click", function (event) {
     // retrieves id from save button
     event.preventDefault();
 
@@ -52,11 +109,21 @@ $(document).ready(function () {
     console.log(newCity);
     // Stores value of input in local storage object
     localStorage.setItem("count", location);
-    localStorage.setItem("location" + location, newCity);
-
+    localStorage.setItem("place" + location, newCity);
+    // console.log(history.indexof())
     weatherSearch(newCity);
   });
+  
+  $(".histBtn").on("click", function (event) {
+    // retrieves id from save button
+    event.preventDefault();
+
+    $("#search-input").text(event.currentTarget.innerText);
+    console.log(event.currentTarget.innerText);
+    weatherSearch(event.currentTarget.innerText);
+  });
+  
 
 
-  weatherSearch(localStorage.getItem("count"))
+  // weatherSearch(localStorage.getItem("count"));
 });
