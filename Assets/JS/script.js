@@ -70,9 +70,25 @@ $(document).ready(function () {
         var date = uvForecast.daily[i].dt
         var tempHighKel = uvForecast.daily[i].temp.max
         var tempHighFar = ((tempHighKel - 273.15) * 1.8 + 32).toFixed(2);
+        var tempLowKel = uvForecast.daily[i].temp.max
+        var tempLowFar = ((tempLowKel - 273.15) * 1.8 + 32).toFixed(2);
+        // var iconID = uvForecast.list[i].weather[0].icon;
+        // var iconURL = "http://openweathermap.org/img/w/" + iconID + ".png"
         var card =
-        '<div class="col-md-2"><p class="5-dayDate">' + date + 
-        '</p>'
+        '<div class="col-md-2"><div class="card text-white bg-primary mb-3 dateForecast" style="max-width: 18rem">' + date
+        '</div><div class="card-header">' + 
+        // '<img src="' + iconURL + '" />' +
+        // '</p><p>' + 
+        'High Temp: ' +
+        tempHighFar +
+        '℉' +
+        '</div>'
+        // <p>" +
+        // 'Low Temp: ' +
+        // tempLowFar +
+        // '℉' +
+        // "</p><p>" +
+
 
     //     "<div class='col-sm-2 cardDay'><p class='dateForecast'>" +
     //     forecastDate +
