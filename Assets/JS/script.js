@@ -65,49 +65,26 @@ $(document).ready(function () {
         $('.uvi').text('UV index: ' + uvForecast.current.uvi)
         console.log(uvForecast.current.uvi);
 
-        for (i = 0; i < 5; i++)
+        for (i = 0; i < 5; i++) {
         console.log(uvForecast);
         var date = uvForecast.daily[i].dt
         var tempHighKel = uvForecast.daily[i].temp.max
         var tempHighFar = ((tempHighKel - 273.15) * 1.8 + 32).toFixed(2);
         var tempLowKel = uvForecast.daily[i].temp.max
         var tempLowFar = ((tempLowKel - 273.15) * 1.8 + 32).toFixed(2);
-        // var iconID = uvForecast.list[i].weather[0].icon;
-        // var iconURL = "http://openweathermap.org/img/w/" + iconID + ".png"
-        var card =
-        '<div class="col-md-2"><div class="card text-white bg-primary mb-3 dateForecast" style="max-width: 18rem">' + date
-        '</div><div class="card-header">' + 
-        // '<img src="' + iconURL + '" />' +
-        // '</p><p>' + 
-        'High Temp: ' +
-        tempHighFar +
-        '℉' +
-        '</div>'
-        // <p>" +
-        // 'Low Temp: ' +
-        // tempLowFar +
-        // '℉' +
-        // "</p><p>" +
+        var dailyHumidity = uvForecast.daily[i].humidity
+        
+        $('.date' + i).text(date)
+        $('.daily-humidity' + i).text(dailyHumidity)
+        $('.temp-high' + i).text(tempHighFar)
+        $('.temp-low' + i).text(tempLowFar)
+        console.log(uvForecast.daily[i].dt)
 
 
-    //     "<div class='col-sm-2 cardDay'><p class='dateForecast'>" +
-    //     forecastDate +
-    //     "</p><p>" +
-    //     '<img src="' + iconurl + '" />' +
-    //     "</p><p>" +
-    //     "Temp: " +
-    //     forecastTemp +
-    //     '℉' +
-    //     "</p><p>" +
-    //     'Humidity: ' +
-    //     forecastHumidity +
-    //     '%' +
-    //     "</p></div>";
-    // $(".forecastCards").append(cardContent);
 
 
-        $('#forecastDiv').append(card);
-      })
+
+      }})
     });
   };
 
